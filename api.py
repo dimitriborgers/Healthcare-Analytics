@@ -12,7 +12,7 @@ class DataMergerBase(ABC):
             self.data = json.load(f)
 
         #Open output file as write-only
-        self.output =open(outputFile,'w')
+        self.output = open(outputFile,'w')
 
         #Counter
         self.count = 0
@@ -171,6 +171,7 @@ class SinaiMerger(DataMergerBase):
 
                     #increment counter
                     start += 1
+                    
             #Once all json elements have been added, dump into other file
             json.dump(jsonContainer, self.output, indent=2)
 
